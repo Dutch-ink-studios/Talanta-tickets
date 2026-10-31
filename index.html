@@ -3,76 +3,254 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Talanta Tickets | Match Tickets</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Talanta Tickets | International Football</title>
+<meta name="description" content="Discover football ticket enquiries and match experiences in Nairobi.">
 <style>
 *{box-sizing:border-box}
-body{margin:0;background:#080b12;color:white;font-family:Arial,sans-serif}
-header{padding:22px 7%;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #252b38}
-.logo{font-size:24px;font-weight:900;color:#fff}
-.logo span{color:#f5a623}
-nav a{color:#ddd;text-decoration:none;margin-left:20px;font-size:14px}
-.hero{padding:65px 7%;background:linear-gradient(120deg,#101b2b,#080b12)}
-.tag{color:#f5a623;font-weight:bold;letter-spacing:2px}
-h1{font-size:clamp(38px,7vw,68px);line-height:1.05;margin:20px 0}
-.hero p{color:#bdc5d1;line-height:1.7}
-.btn{display:inline-block;background:#f5a623;color:#111;padding:15px 24px;border-radius:6px;text-decoration:none;font-weight:bold;margin-top:15px}
-.section{padding:45px 7%}
-.card{background:#151c29;border:1px solid #293347;border-radius:12px;overflow:hidden;max-width:650px}
-.match{padding:30px;text-align:center;background:linear-gradient(120deg,#18263a,#111827)}
-.teams{display:flex;justify-content:space-around;align-items:center;gap:12px;margin:25px 0}
-.team{font-size:22px;font-weight:bold}
-.vs{color:#f5a623;font-weight:900;font-size:22px}
-.details{padding:25px}
-.details p{color:#c3cad5;line-height:1.8}
-.price{font-size:30px;font-weight:bold;color:#f5a623}
-footer{text-align:center;padding:30px;color:#8792a3;border-top:1px solid #252b38}
+body{margin:0;background:#080b11;color:white;font-family:Arial,sans-serif}
+header{padding:20px 6%;display:flex;justify-content:space-between;align-items:center;background:#0d121c;border-bottom:1px solid #293347}
+.logo{font-size:23px;font-weight:900;letter-spacing:1px}
+.gold{color:#f5ad35}
+nav{display:flex;gap:17px;align-items:center}
+nav a{color:white;text-decoration:none;font-size:13px}
+.lang{background:#202b3b;color:white;padding:9px;border:1px solid #46536a;border-radius:5px}
+.hero{min-height:570px;padding:85px 7%;display:flex;align-items:center;background:linear-gradient(90deg,#080b11 5%,rgba(8,11,17,.75)),url('https://cdn.radioafrica.digital/image/2026/05/9b49b3fc-41fe-4307-bb56-c6a25711c30d.jpg') center/cover}
+.hero-content{max-width:650px}
+.tag{color:#f5ad35;letter-spacing:3px;font-size:12px;font-weight:bold}
+h1{font-size:clamp(45px,8vw,78px);line-height:1;margin:20px 0}
+.hero p,.muted{color:#b7c1d0;line-height:1.8}
+.btn{display:inline-block;padding:15px 22px;border-radius:5px;background:#f5ad35;color:#111;text-decoration:none;font-weight:bold;margin:12px 8px 0 0}
+.btn.outline{background:transparent;color:white;border:1px solid #68758a}
+section{padding:65px 7%}
+h2{font-size:34px;margin:14px 0 25px}
+.match{background:#141d2b;border:1px solid #344157;border-radius:12px;overflow:hidden}
+.match-photo{width:100%;height:290px;object-fit:cover;display:block}
+.match-info{padding:28px}
+.teams{display:flex;justify-content:center;align-items:center;gap:25px;text-align:center;margin:25px 0}
+.team{font-size:clamp(20px,4vw,32px);font-weight:900}
+.vs{color:#f5ad35;font-size:25px}
+.date{text-align:center;color:#f5ad35;letter-spacing:2px;font-weight:bold}
+.prices{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
+.price-card{background:#141d2b;border:1px solid #354258;border-radius:10px;padding:24px;text-align:center}
+.price-card.featured{border-color:#f5ad35}
+.price{font-size:32px;color:#f5ad35;font-weight:bold;margin:17px 0}
+.notice{background:#241d10;padding:17px;border-left:4px solid #f5ad35;color:#f5dba9;line-height:1.7;margin-top:20px}
+.players{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.player{background:#141d2b;border:1px solid #303e52;border-radius:11px;overflow:hidden}
+.player img{width:100%;height:260px;object-fit:cover;object-position:top;background:#202a39;display:block}
+.player-info{padding:17px}
+.player-info h3{margin:5px 0 8px;font-size:20px}
+.position{color:#f5ad35;font-size:12px;font-weight:bold;letter-spacing:1px}
+.player-info p{color:#aeb9c9;font-size:13px;line-height:1.6}
+.team-label{margin:35px 0 17px;color:#f5ad35;letter-spacing:2px;font-weight:bold}
+.stadium-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.stadium-grid img{width:100%;height:260px;object-fit:cover;border-radius:10px}
+footer{background:#0d121c;padding:35px 7%;text-align:center;color:#8d99a9}
+footer a{color:#f5ad35}
+@media(max-width:650px){
+header{padding:17px 4%}
+.logo{font-size:17px}
+nav{gap:9px}
+nav a{font-size:11px}
+.hero{padding:65px 6%;min-height:490px}
+section{padding:45px 6%}
+.prices{grid-template-columns:1fr}
+.players{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.player img{height:190px}
+.player-info{padding:12px}
+.player-info h3{font-size:16px}
+.stadium-grid{grid-template-columns:1fr}
+.stadium-grid img{height:220px}
+}
+@media(max-width:370px){
+.players{grid-template-columns:1fr}
+}
 </style>
 </head>
+
 <body>
 <header>
-<div class="logo">TALANTA <span>TICKETS.</span></div>
-<nav><a href="#match">Tickets</a><a href="#contact">Contact</a></nav>
+<div class="logo">TALANTA <span class="gold">TICKETS.</span></div>
+<nav>
+<a href="#match">Tickets</a>
+<a href="#stars">Players</a>
+<a href="#stadium">Stadium</a>
+<a href="#contact">Contact</a>
+<button class="lang" onclick="toggleLanguage()">EN / NL</button>
+</nav>
 </header>
 
-<section class="hero">
-<div class="tag">YOUR MATCH. YOUR EXPERIENCE.</div>
-<h1>BIG MATCHES.<br>BIG MOMENTS.</h1>
-<p>Discover football tickets and secure your place at the action. Contact our team for ticket availability and booking assistance.</p>
-<a class="btn" href="#match">EXPLORE TICKETS →</a>
-</section>
+<div class="hero">
+<div class="hero-content">
+<div class="tag">NAIROBI • KENYA • 2027</div>
+<h1>FOOTBALL<br>WITHOUT<br><span class="gold">BORDERS.</span></h1>
+<p>Experience world-class football in Nairobi. Discover the stars, explore the stadium and enquire about match tickets.</p>
+<a href="#match" class="btn">EXPLORE MATCH →</a>
+<a href="#contact" class="btn outline">CONTACT US</a>
+</div>
+</div>
 
-<section class="section" id="match">
-<p class="tag">FEATURED FIXTURE</p>
-<h2>Upcoming Match</h2>
-<div class="card">
+<section id="match">
+<div class="tag">FEATURED FIXTURE</div>
+<h2>Bayern Munich vs Ajax</h2>
 <div class="match">
-<div class="tag">FOOTBALL FIXTURE</div>
+<img class="match-photo"
+src="https://sportal365images.com/process/smp-images-production/ringier.africa.ke/05072026/e30c0a47-cd23-4ff6-89af-c11b6d5fdc65.jfif?operations=fit%28770%3A%29"
+alt="Raila Odinga International Stadium">
+<div class="match-info">
+<div class="date">5 JANUARY 2027</div>
 <div class="teams">
 <div class="team">BAYERN<br>MUNICH</div>
 <div class="vs">VS</div>
 <div class="team">AJAX</div>
 </div>
-<p>5 JANUARY 2027</p>
+<p class="muted" style="text-align:center">
+Raila Odinga International Stadium<br>
+Talanta Sports City • Nairobi, Kenya
+</p>
+<div class="notice">
+Official fixture confirmed by both clubs. Ticket availability and prices are subject to the official ticket release.
 </div>
-<div class="details">
-<p>📍 Raila Odinga Stadium</p>
-<p>🎟️ Contact us to confirm ticket availability and prices.</p>
-<div class="price">Tickets available on enquiry</div>
-<a class="btn" href="https://wa.me/254729460424?text=Hello%20Talanta%20Tickets%2C%20I%20am%20interested%20in%20Bayern%20Munich%20vs%20Ajax%20tickets.">BOOK VIA WHATSAPP</a>
+<a class="btn" href="https://talantasportscity.com/">OFFICIAL TICKET PORTAL</a>
 </div>
 </div>
 </section>
 
-<section class="section" id="contact">
-<h2>Need Assistance?</h2>
-<p>Our team is ready to help with ticket enquiries and bookings.</p>
-<a class="btn" href="https://wa.me/254729460424">CONTACT TALANTA TICKETS</a>
+<section id="stars">
+<div class="tag">THE PLAYERS</div>
+<h2>Meet the Stars</h2>
+<p class="muted">Discover some of the leading names associated with both clubs ahead of the Nairobi football spectacle.</p>
+
+<div class="team-label">FC BAYERN MUNICH</div>
+<div class="players">
+
+<div class="player">
+<img src="https://img.fcbayern.com/image/upload/f_auto/q_auto/t_cms-1x1-seo/v1691827799/cms/public/images/fcbayern-com/players/spielerportraits/ganzkoerper/harry-kane.png" alt="Harry Kane">
+<div class="player-info">
+<div class="position">STRIKER • ENGLAND</div>
+<h3>Harry Kane</h3>
+<p>Bayern's prolific centre-forward and England captain.</p>
+</div>
+</div>
+
+<div class="player">
+<img src="https://www.flickstat.com/_next/image?q=75&url=https%3A%2F%2Foesmqklbdslpxfhsuwcv.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fwc-sportsdb-players%2Ff365fb5f-59da-4682-98d4-647c2eb2f29a_cutout.png&w=750" alt="Michael Olise">
+<div class="player-info">
+<div class="position">WINGER • FRANCE</div>
+<h3>Michael Olise</h3>
+<p>Creative attacker known for his skill and passing.</p>
+</div>
+</div>
+
+<div class="player">
+<img src="https://assets.bundesliga.com/player/dfl-obj-002gcr-dfl-clu-00000g-dfl-sea-0001k9.png" alt="Jamal Musiala">
+<div class="player-info">
+<div class="position">MIDFIELDER • GERMANY</div>
+<h3>Jamal Musiala</h3>
+<p>Dynamic attacking midfielder with exceptional dribbling.</p>
+</div>
+</div>
+
+</div>
+
+<div class="team-label">AJAX AMSTERDAM</div>
+<div class="players">
+
+<div class="player">
+<img src="https://www.ajax.nl/media/hikcbdtf/terstegenprofiel.png" alt="Marc Andre ter Stegen">
+<div class="player-info">
+<div class="position">GOALKEEPER • GERMANY</div>
+<h3>Marc-André ter Stegen</h3>
+<p>Experienced goalkeeper and major addition to Ajax.</p>
+</div>
+</div>
+
+<div class="player">
+<img src="https://www.ajax.nl/media/h13abk5g/kehrerprofiel.png" alt="Thilo Kehrer">
+<div class="player-info">
+<div class="position">DEFENDER • GERMANY</div>
+<h3>Thilo Kehrer</h3>
+<p>Versatile defender with international experience.</p>
+</div>
+</div>
+
+<div class="player">
+<img src="https://www.ajax.nl/media/bprj1wf1/brandtprofiel.png" alt="Julian Brandt">
+<div class="player-info">
+<div class="position">MIDFIELDER • GERMANY</div>
+<h3>Julian Brandt</h3>
+<p>Creative midfielder bringing experience and vision.</p>
+</div>
+</div>
+
+</div>
+<div class="notice">
+Featured players are not a confirmed matchday lineup. Final participation depends on the official travelling squads and team announcements.
+</div>
+</section>
+
+<section>
+<div class="tag">TICKET INFORMATION</div>
+<h2>Choose Your Experience</h2>
+<p class="muted">Prices displayed in euros. Official ticket prices are awaiting publication.</p>
+<div class="prices">
+<div class="price-card">
+<h3>STANDARD</h3>
+<div class="price">€TBA</div>
+<p class="muted">General admission category</p>
+</div>
+<div class="price-card featured">
+<h3>PREMIUM</h3>
+<div class="price">€TBA</div>
+<p class="muted">Premium seating category</p>
+</div>
+<div class="price-card">
+<h3>VIP</h3>
+<div class="price">€TBA</div>
+<p class="muted">Hospitality category</p>
+</div>
+</div>
+<div class="notice">
+No tickets are reserved or guaranteed through an enquiry. Confirm official availability, pricing and payment arrangements before paying.
+</div>
+</section>
+
+<section id="stadium">
+<div class="tag">THE VENUE</div>
+<h2>Raila Odinga International Stadium</h2>
+<p class="muted">A new 60,000-capacity football landmark in Nairobi, Kenya.</p>
+<div class="stadium-grid">
+<img src="https://cdn.radioafrica.digital/image/2026/05/9b49b3fc-41fe-4307-bb56-c6a25711c30d.jpg" alt="Talanta stadium exterior">
+<img src="https://sportal365images.com/process/smp-images-production/ringier.africa.ke/05072026/e30c0a47-cd23-4ff6-89af-c11b6d5fdc65.jfif?operations=fit%28770%3A%29" alt="Talanta stadium interior">
+</div>
+</section>
+
+<section id="contact">
+<div class="tag">INTERNATIONAL CUSTOMER SUPPORT</div>
+<h2>Planning to Attend?</h2>
+<p class="muted">Contact Talanta Tickets for independent ticket enquiries and assistance.</p>
+<a class="btn" href="https://wa.me/254729460424?text=Hello%20Talanta%20Tickets%2C%20I%20am%20interested%20in%20Bayern%20vs%20Ajax%20tickets.">WHATSAPP ENQUIRY</a>
+<a class="btn outline" href="https://talantasportscity.com/">OFFICIAL TICKETING WEBSITE</a>
 </section>
 
 <footer>
-<p>© 2026 Talanta Tickets. All rights reserved.</p>
+<div class="logo">TALANTA <span class="gold">TICKETS.</span></div>
 <p>Football. Passion. Experience.</p>
+<p>Independent ticket enquiry service. Not the official event organiser.</p>
+<p>© 2026 Talanta Tickets</p>
 </footer>
+
+<script>
+function toggleLanguage(){
+ const isDutch=document.documentElement.lang==="en";
+ document.documentElement.lang=isDutch?"nl":"en";
+ document.querySelectorAll("nav a").forEach((link,i)=>{
+ const english=["Tickets","Players","Stadium","Contact"];
+ const dutch=["Tickets","Spelers","Stadion","Contact"];
+ link.textContent=isDutch?dutch[i]:english[i];
+ });
+}
+</script>
 </body>
 </html>
